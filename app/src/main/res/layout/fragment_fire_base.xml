@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="userModel"
+            type="com.example.gagan.offline.helper.AddUserHelper" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.gagan.offline.fragment.FireBaseFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/iv_pic"
+                    android:layout_width="250dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Name:">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/fb_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@={userModel.name}" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Phone number:">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/fb_phNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:text="@={userModel.phone}" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fb_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="16dp"
+            android:elevation="4dp"
+            android:src="@drawable/ic_action_add" />
+
+
+    </FrameLayout>
+</layout>
